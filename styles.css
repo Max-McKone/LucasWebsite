@@ -1,0 +1,98 @@
+body {
+    font-family: 'League Gothic', sans-serif; /* Use League Gothic font */
+    font-size: 30px; /* Added unit to font-size */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: color(srgb 0.0941 0.0941 0.0941); /* Set background color */
+    color: white; /* Set text color to white for contrast */
+}
+
+.hero {
+    height: 100vh;
+    background: url('desktop_landing.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    background: transparent; /* Keep container background transparent to show the black background */
+    padding: 40px 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row; /* Arrange buttons horizontally on desktop */
+    justify-content: center; /* Center align links */
+    gap: 20px; /* Increased space between buttons */
+    margin-top: 20px; /* Add margin above links */
+}
+
+/* Button styles */
+.links a {
+    padding: 12px 20px; /* Padding for the button */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background for buttons */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.2em; /* Button font size */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    display: flex; /* Ensure buttons are flex containers */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.links a:hover {
+    background: rgba(255, 255, 255, 0.5); /* Change background on hover */
+}
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Open upwards */
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px -8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column; /* Stack buttons vertically on mobile */
+        align-items: center; /* Center align links */
+        gap: 15px; /* Space between buttons */
+    }
+    .hero {
+        background: url('mobile_landing.png') no-repeat center center/cover; /* Add mobile background */
+        font-size: 2em; /* Adjust font size for mobile */
+        padding: 20px; /* Padding for mobile */
+        text-align: center; /* Center text */
+    }
+}
